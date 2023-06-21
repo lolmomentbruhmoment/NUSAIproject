@@ -22,7 +22,7 @@ void loop() {
     if (x >= smoothness_pts)
         x = 0;
      
-    float pwm_val = 255.0*sqrt((1.0 -  abs((2.0*(x/smoothness_pts))-1.0)));
+    float pwm_val = 255.0*sqrt(1.0 -  pow(abs((2.0*(x/smoothness_pts))-1.0),2.0));
     analogWrite(ONBOARD_LED,int(pwm_val));
     x += 1;
     delay(5);                    
