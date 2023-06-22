@@ -141,6 +141,7 @@ void loop() {
         }
           
     } else if (digitalRead(ENDSTP_SW_B) == LOW) {
+        if (isRobotSpinning) {
             digitalWrite(MotorA_1, HIGH);
             digitalWrite(MotorA_2, LOW);
             digitalWrite(MotorB_1, LOW);
@@ -158,3 +159,7 @@ void loop() {
         digitalWrite(MotorB_2, LOW);
     }
 }
+                    
+                
+                    
+                
